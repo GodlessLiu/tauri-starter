@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.border-animation {
+    transition-property: border-color;
+    transition-duration: .3s;
+}
+
+.bg-hover {
+    @apply hover:bg-[#e3e5e7] duration-300 rounded-sm p-1 box-content hover:cursor-pointer;
+}
+
+.nav-link {
+    @apply pb-2 box-border font-bold;
+}
