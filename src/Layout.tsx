@@ -18,6 +18,7 @@ export const Layout = () => {
         ctrl + R 刷新
     */
     useEffect(() => {
+        if (!import.meta.env.VITE_IS_PRODUCTION) return
         function preventDefault(e: Event) {
             e.preventDefault()
         }
@@ -39,7 +40,7 @@ export const Layout = () => {
     return (
         <div id="app" className="flex flex-row" >
             <div data-tauri-drag-region className="w-16 h-screen pb-8 px-2 shadow-xl items-center flex flex-col justify-between gap-2">
-                <div className="pt-4 flex flex-col text-center justify-center">
+                <div className="mt-12 flex flex-col text-center justify-center">
                     <ColorBtn path2name={basicPath2name} >
                         <div onClick={() => {
                             set_navs(basicPath2name)
@@ -58,7 +59,7 @@ export const Layout = () => {
             </div>
             <div className="flex-1">
                 <MyHeader />
-                <div className=" pl-8 pt-2">
+                <div className="pl-8 pt-2">
                     <Outlet />
                 </div>
             </div>

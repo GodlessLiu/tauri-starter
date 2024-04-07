@@ -37,6 +37,6 @@ export const basicPath2name: Path2Name = {
 }
 
 export const settingPath2name: Path2Name = {
-    "/setting": "设置"
+    "/setting": "Setting",
 }
 

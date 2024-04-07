@@ -6,11 +6,8 @@ interface MyNavlinkProps {
 }
 
 export const MyNavlink: FC<PropsWithChildren<MyNavlinkProps>> = ({ children, to }) => {
-    return <NavLink to={to} className="nav-link border-animation" style={({ isActive }) => {
-        return {
-            color: isActive ? "#ff6699" : "black",
-            borderBottom: isActive ? "3px solid #ff6699" : "3px solid transparent",
-        };
+    return <NavLink to={to} className={({ isActive }) => {
+        return isActive ? 'active-btn border-primary border-b-4 pb-1' : 'border-b-4 border-transparent pb-1'
     }}>
         {children}
     </NavLink>
