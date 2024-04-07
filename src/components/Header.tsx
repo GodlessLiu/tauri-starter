@@ -4,17 +4,19 @@ import { FluentMinimize24Regular } from "./icons/Minimize";
 import Logo from "../assets/logo.ico";
 import { appWindow } from '@tauri-apps/api/window';
 import { MyNavlink } from "./MyNavLink";
-import { path2name } from "../route";
-
+import { useContext } from "react";
+import { RouterLinkContext } from "../route/RouterLinkProvider";
 export function MyHeader() {
+    const { navs } = useContext(RouterLinkContext)
+
     return (
-        <div data-tauri-drag-region className="h-14 flex justify-between items-center border-b px-8">
+        <div data-tauri-drag-region className="h-14 flex justify-between items-center border-b pl-8 pr-4">
             <div className="logo flex">
                 <img src={Logo} alt="Logo" className="mr-8 h-[32px]" />
                 <nav className="navs flex gap-6 items-center">
                     {
-                        path2name && Object.keys(path2name).map((path) => {
-                            return <MyNavlink key={path} to={path}>{path2name[path]}</MyNavlink>
+                        navs && Object.keys(navs).map((path) => {
+                            return <MyNavlink key={path} to={path}>{navs[path]}</MyNavlink>
                         })
                     }
                 </nav>

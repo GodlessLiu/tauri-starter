@@ -11,6 +11,15 @@
     @apply hover:bg-[#e3e5e7] duration-300 rounded-sm p-1 box-content hover:cursor-pointer;
 }
 
+.pre-btn-ok {
+    @apply bg-[#e3e5e7] duration-300;
+}
+
 .nav-link {
     @apply pb-2 box-border font-bold;
+}
+
+
+.active-btn {
+    @apply text-[#ff6699] font-bold;
 }
